@@ -12,6 +12,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
+    quotes: [Quote]
   }
   type Quote {
     name: String
@@ -23,6 +24,9 @@ const resolvers = {
   Query: {
     users: () => users,
     quotes: () => quotes,
+  },
+  User: {
+    quotes: (ur) => quotes.filter((q) => q.by === ur.id),
   },
 };
 

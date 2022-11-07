@@ -6,3 +6,11 @@ query getAllUsers{
     lastName
 }
 }
+
+----------------------------------------
+query getAllQuotes{
+  quotes{
+ 		name
+    by
+	}
+}
