@@ -39,3 +39,12 @@ query getOneQuote($userid: ID!){
     	by
 		}
 }
+-----------------------------------------
+mutation createUser($userNew:UserInput! ){
+  signUpUserDummy(userNew:$userNew){
+    id
+    firstName
+    lastName
+    email
+  }
+}
