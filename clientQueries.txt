@@ -14,3 +14,20 @@ query getAllQuotes{
     by
 	}
 }
+
+-----------------------------------------
+query getOneUser{
+  user(id:"23131"){
+    id
+    firstName
+		lastName
+		}
+}
+
+-----------------------------------------
+query getOneQuote{
+  quote(by:"23131"){
+			name
+    	by
+		}
+}
