@@ -31,3 +31,11 @@ query getOneQuote{
     	by
 		}
 }
+
+-----------------------------------------
+query getOneQuote($userid: ID!){
+  quote(by:$userid){
+			name
+    	by
+		}
+}
