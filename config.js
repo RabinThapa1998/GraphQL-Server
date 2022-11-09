@@ -1,2 +1,4 @@
-export const MONGO_URI =
-  "mongodb+srv://rabin:s1JkRAAsTD4APDKa@cluster0.kxi2omy.mongodb.net/graphqldb?retryWrites=true&w=majority";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+export const MONGO_URI = process.env.MONGO_URI;
