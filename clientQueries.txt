@@ -41,7 +41,7 @@ query getOneQuote($userid: ID!){
 }
 -----------------------------------------
 mutation createUser($userNew:UserInput! ){
-  signUpUserDummy(userNew:$userNew){
+  user:signUpUserDummy(userNew:$userNew){
     id
     firstName
     lastName
