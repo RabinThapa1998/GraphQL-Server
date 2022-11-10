@@ -48,3 +48,7 @@ mutation createUser($userNew:UserInput! ){
     email
   }
 }
+----------------------------------------------
+mutation createQuote{
+  quote:createQuote(name:"i am a good programmer")
+}
