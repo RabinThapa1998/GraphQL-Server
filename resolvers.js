@@ -1,4 +1,3 @@
-import { quotes, users } from "./fakedb.js";
 import { randomBytes } from "crypto";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
@@ -9,13 +8,13 @@ const User = mongoose.model("User");
 const Quote = mongoose.model("Quote");
 const resolvers = {
   Query: {
-    users: () => users,
-    user: (_, args) => users.find((item) => item._id === args._id),
-    quotes: () => quotes,
-    quote: (_, args) => quotes.filter((item) => item.by === args.by),
+    users: async () => await User.find({}),
+    user: async (_, { id }) => await User.findOne({ _id }),
+    quotes: async () => await Quote.find({}),
+    quote: async (_, { by }) => await Quote.find({ by }),
   },
   User: {
-    quotes: (ur) => quotes.filter((q) => q.by === ur._id),
+    quotes: (ur) => Quote.find({ by: ur._id }),
   },
   Mutation: {
     signUpUser: async (_, { userNew }) => {
