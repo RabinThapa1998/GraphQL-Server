@@ -20,6 +20,7 @@ const typeDefs = gql`
   type Mutation {
     signUpUser(userNew: UserInput!): User
     signInUser(userSignin: UserSignInInput!): Token
+    createQuote(name: String!): String
   }
   type Token {
     token: String

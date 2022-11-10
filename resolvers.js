@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "./config.js";
 
 const User = mongoose.model("User");
+const Quote = mongoose.model("Quote");
 const resolvers = {
   Query: {
     users: () => users,
@@ -48,6 +49,16 @@ const resolvers = {
         JWT_SECRET
       );
       return { token };
+    },
+    createQuote: async (_, { name }, { userId }) => {
+      if (!userId) {
+        throw new Error("You must be logged in to create a quote");
+      }
+      const newQuote = await new Quote({
+        name,
+        by: userId,
+      }).save();
+      return "Quote created successfully";
     },
   },
 };
