@@ -49,4 +49,3 @@ mutation createUser($userNew:UserInput! ){
   }
 }
 
-----------------------------
