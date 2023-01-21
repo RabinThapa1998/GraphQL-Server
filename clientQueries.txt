@@ -48,5 +48,3 @@ mutation createUser($userNew:UserInput! ){
     email
   }
 }
-
-213132132131sdcsd
